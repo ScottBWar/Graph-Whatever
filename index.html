@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>graph Whatever</title>
+		<script src="js/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/script.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		
+	</head>
+	<body ng-controller="MyController">
+		<h1>Graph Whatever</h1>
+
+		
+		
+		<div class="list" style="float:left;margin-right:300px;margin-top:-2px;">
+			<ul class="datasets" ng-repeat="stat in stats">
+				<li>Label:<input type="text" ng-model="stat.label"></li>
+				<li>Color:<input  ng-model="stat.color" value="stat.color" placeholder="stat.color" type="color"></li>
+				<li>Value:<input type="text" min="1" ng-model="stat.value"></li>
+				<li>Value Slider:<input type="range" min="1" max="100" ng-model="stat.value"></li>
+				<button ng-click="removeField(stat)">Remove Field</button>
+			</ul>
+			<button ng-click="createField()">Add Field</button>
+		</div>
+
+		<div id="blank" style="float:left;">
+			<div pie-chart ng-if="toggle === false" chart-data="stats">
+			</div>
+			<div donut-chart ng-if="toggle === true" chart-data="stats">
+			</div>
+
+			<div class="onoffswitch" style="margin:0 auto;">
+			<input type="checkbox" name="onoffswitch" ng-click="toggleStyle()" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+			<label class="onoffswitch-label" for="myonoffswitch">
+				<span class="onoffswitch-inner"></span>
+				<span class="onoffswitch-switch"></span>
+			</label>
+		</div>
+			<div style="clear:both;"></div>
+		</div>
+		
+		
+	</body>
+</html>
