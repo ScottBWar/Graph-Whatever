@@ -16,6 +16,7 @@
 		
 		
 		<div class="list" style="float:left;margin-right:300px;margin-top:-2px;">
+		Title:<input type="text" ng-model="gTitle">
 			<ul class="datasets" ng-repeat="stat in stats">
 				<li>Label:<input type="text" ng-model="stat.label"></li>
 				<li>Color:<input  ng-model="stat.color" value="stat.color" placeholder="stat.color" type="color"></li>
@@ -27,6 +28,7 @@
 		</div>
 
 		<div id="blank" style="float:left;">
+		<h3>{{gTitle}}</h3>
 			<div pie-chart ng-if="toggle === false" chart-data="stats">
 			</div>
 			<div donut-chart ng-if="toggle === true" chart-data="stats">
