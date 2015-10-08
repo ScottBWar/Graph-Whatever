@@ -101,7 +101,7 @@ myApp.directive('pieChart', function($window) {
                     .attr('width', width)
                     .attr('height', height)
                     .append('g')
-                    .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
+                    .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')');
 
                 var arc = d3.svg.arc()
                     .outerRadius(radius);
@@ -119,7 +119,7 @@ myApp.directive('pieChart', function($window) {
                     .attr('d', arc)
                     .attr('fill', function(d) {
                         return d.data.color;
-                    })
+                    });
 
                 var legend = svg.selectAll('.legend')
                     .data(colors)
@@ -139,10 +139,10 @@ myApp.directive('pieChart', function($window) {
                     .attr('width', legendRectSize)
                     .attr('height', legendRectSize)
                     .style('fill', function(d, i) {
-                        return colors[i]
+                        return colors[i];
                     })
                     .style('stroke', function(d, i) {
-                        return colors[i]
+                        return colors[i];
                     });
 
 
@@ -194,7 +194,7 @@ myApp.directive('donutChart', function($window) {
 
                 //reverse dataset on second graph just looks a little better...
                 function reverseDataset() {
-                    var retData = new Array;
+                    var retData = new Array();
                     for (var i = dataset.length - 1; i >= 0; i--) {
                         retData.push(dataset[i]);
                     }
@@ -255,10 +255,10 @@ myApp.directive('donutChart', function($window) {
                     .attr('width', legendRectSize)
                     .attr('height', legendRectSize)
                     .style('fill', function(d, i) {
-                        return colors[i]
+                        return colors[i];
                     })
                     .style('stroke', function(d, i) {
-                        return colors[i]
+                        return colors[i];
                     });
 
 

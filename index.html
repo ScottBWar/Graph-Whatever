@@ -12,11 +12,9 @@
 	</head>
 	<body ng-controller="MyController">
 		<h1>Graph Whatever</h1>
-
-		
 		
 		<div class="list" style="float:left;margin-right:300px;margin-top:-2px;">
-		Title:<input type="text" ng-model="gTitle">
+			Title:<input type="text" ng-model="gTitle">
 			<ul class="datasets" ng-repeat="stat in stats">
 				<li>Label:<input type="text" ng-model="stat.label"></li>
 				<li>Color:<input  ng-model="stat.color" value="stat.color" placeholder="stat.color" type="color"></li>
@@ -26,21 +24,19 @@
 			</ul>
 			<button ng-click="createField()">Add Field</button>
 		</div>
-
 		<div id="blank" style="float:left;">
-		<h3>{{gTitle}}</h3>
+			<h3>{{gTitle}}</h3>
 			<div pie-chart ng-if="toggle === false" chart-data="stats">
 			</div>
 			<div donut-chart ng-if="toggle === true" chart-data="stats">
 			</div>
-
 			<div class="onoffswitch" style="margin:0 auto;">
-			<input type="checkbox" name="onoffswitch" ng-click="toggleStyle()" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-			<label class="onoffswitch-label" for="myonoffswitch">
-				<span class="onoffswitch-inner"></span>
-				<span class="onoffswitch-switch"></span>
-			</label>
-		</div>
+				<input type="checkbox" name="onoffswitch" ng-click="toggleStyle()" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+				<label class="onoffswitch-label" for="myonoffswitch">
+					<span class="onoffswitch-inner"></span>
+					<span class="onoffswitch-switch"></span>
+				</label>
+			</div>
 			<div style="clear:both;"></div>
 		</div>
 		
