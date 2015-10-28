@@ -27,16 +27,16 @@ myApp.controller('MyController', function MyController($scope, $http) {
         'color': '#2ecc71'
     }];
 
-    $scope.removeField = function(stat){
+    $scope.removeField = function(stat) {
         var index = $scope.stats.indexOf(stat);
         $scope.stats.splice(index, 1);
     };
 
-    $scope.createField = function(){
+    $scope.createField = function() {
         var newField = {
-            'label':'new item',
-            'value':1,
-            'color':'#'+ Math.floor(Math.random()*16777215).toString(16)
+            'label': 'new item',
+            'value': 1,
+            'color': '#' + Math.floor(Math.random() * 16777215).toString(16)
         };
 
         $scope.stats.push(newField);
@@ -46,11 +46,10 @@ myApp.controller('MyController', function MyController($scope, $http) {
 
     $scope.toggle = false;
 
-    $scope.toggleStyle = function(){
-        if(!$scope.toggle){
+    $scope.toggleStyle = function() {
+        if (!$scope.toggle) {
             $scope.toggle = true;
-        }
-        else{
+        } else {
             $scope.toggle = false;
         }
     };
@@ -191,7 +190,6 @@ myApp.directive('donutChart', function($window) {
                 }
 
 
-
                 //reverse dataset on second graph just looks a little better...
                 function reverseDataset() {
                     var retData = new Array();
@@ -286,18 +284,12 @@ myApp.directive('barsChart', function($window) {
                 drawBarsChart();
             }, true);
 
-
             function drawBarsChart() {
                 var bodySelection = d3.select(elem[0]);
 
                 bodySelection.selectAll('*').remove();
 
                 var dataset = scope[attrs.chartData];
-
-
-
-
-
 
             }
         }
